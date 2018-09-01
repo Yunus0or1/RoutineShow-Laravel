@@ -148,7 +148,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'Yunus', 'ahmedyunuspilot@gmail.com', '123');
+(1, 'aaa', 'aaa@aaa', '123');
 
 --
 -- Indexes for dumped tables
