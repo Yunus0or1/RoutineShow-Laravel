@@ -49,17 +49,9 @@ class PageController extends Controller
 	
 	public function routine(){
 
-
-		
-		$now = Carbon::now();
-		
 		$today_date = Carbon::now()->format('l, d F, Y');
 		
-		
-		
-		 
-		
-		$now =$now->hour+6;
+		$now = 9;    //Carbon::now()->hour+6;
 		
 		// Make $now =9 to view the whole project at any time.
 		// $now = 9 means current time is 9am of this day.
