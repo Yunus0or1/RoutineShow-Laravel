@@ -142,33 +142,41 @@ class PageController extends Controller
 		$news =DB::table('news')
 				
                 ->get();		
-					
-			
 		
+		
+		if ($news == '[]')
+				$news = '' ;
+		
+		
+		
+		else {
+			
 		$newsTime = DB::table('news')->get();
 		
 		
 		//return (Carbon::now()->dayOfWeek) ;
 		
-		if(($newsTime[0]->times +1)==(Carbon::now()->hour+6) || ($newsTime[0]->time_day_of_week +1)==(Carbon::now()->dayOfWeek) ||
-			($newsTime[0]->time_day_of_week +1)== 7)
-		
-		{
+			if(($newsTime[0]->times +1)==(Carbon::now()->hour+6) || ($newsTime[0]->time_day_of_week +1)==(Carbon::now()->dayOfWeek) ||
+				($newsTime[0]->time_day_of_week +1)== 7)
 			
-			DB::table('news')
+			{
+				
+				DB::table('news')
+				
+				->where('id','=',1)
+				->update(
+			  [
+			  'news'=>' ' ,
+			  'times'=>' ' ,
+			  ]
+				);
+			}
 			
-			->where('id','=',1)
-			->update(
-          [
-          'news'=>' ' ,
-		  'times'=>' ' ,
-          ]
-        	);
 		}
 				
 
 		
-		
+
 		return view('homepage')
 		->with('details',$details)
 		->with('now_class',$now_class)

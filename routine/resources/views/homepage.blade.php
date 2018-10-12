@@ -101,10 +101,7 @@ nav.navbar.bootsnav {
   
     
   
-</table>
-@if($news != null)
-<marquee  behavior="scroll" direction="left" style="margin-top:100px;color:red;font-size:25px"><B><I>{{$news[0]->news}}</I></B></marquee>
-@endif
+
 
 
 <div class="navigation">
